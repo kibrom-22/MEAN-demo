@@ -1,0 +1,28 @@
+<div align="center">
+    <h1>Product Detail</h1>
+    Enter Product id:<input type="text" #proId><br><br>
+    Enter Product Name:<input type="text" #name><br><br>
+    Enter Product Price:<input type="text" #price><br><br>
+    Enter Product Quantity:<input type="text" #quantity><br><br>
+    <button (click)="productData(proId.value,name.value,price.value,quantity.value)">Add Product</button>
+    <p style="color: aqua">{{ resText }}</p>
+</div>
+<br><br>
+
+<div align="center">
+    <button (click)="getProducts()">Product List</button><br><br>
+    <table border="2">
+       <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+       </tr>
+       <tr *ngFor="let product of productList">
+        <td>{{ product.proId }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.quantity }}</td>
+       </tr>
+    </table>
+</div>
